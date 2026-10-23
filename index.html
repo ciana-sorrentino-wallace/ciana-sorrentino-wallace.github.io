@@ -218,7 +218,7 @@ footer .wrap{border-top:1px solid #3A4A6B;padding-top:22px;display:flex;justify-
       <div class="stats">
         <div class="stat"><b>4 yrs</b><span>state child welfare research &amp; operations</span></div>
         <div class="stat"><b>3</b><span>peer-reviewed publications</span></div>
-        <div class="stat"><b>12</b><span>writing samples</span></div>
+        <div class="stat"><b>13</b><span>writing samples</span></div>
       </div>
     </div>
     <div class="portrait">
@@ -345,9 +345,9 @@ footer .wrap{border-top:1px solid #3A4A6B;padding-top:22px;display:flex;justify-
         <button class="on" data-f="all">All</button><button data-f="dcs">Indiana DCS</button><button data-f="crisp">CRISP fellowship</button><button data-f="school">Graduate coursework</button>
       </div>
       <div class="filters" data-dim="topic"><span class="fl">Focus</span>
-        <button class="on" data-f="all">All</button><button data-f="cw">Child welfare</button><button data-f="eval">Program evaluation</button><button data-f="policy">Policy analysis</button><button data-f="data">Data &amp; quality</button><button data-f="housing">Housing</button><button data-f="finance">Public finance</button><button data-f="immigrant">Immigrant services</button><button data-f="education">Education</button>
+        <button class="on" data-f="all">All</button><button data-f="cw">Child welfare</button><button data-f="eval">Program evaluation</button><button data-f="policy">Policy analysis</button><button data-f="data">Data &amp; quality</button><button data-f="gis">GIS &amp; mapping</button><button data-f="housing">Housing</button><button data-f="finance">Public finance</button><button data-f="immigrant">Immigrant services</button><button data-f="education">Education</button><button data-f="transport">Transportation</button>
       </div>
-      <div class="fcount" id="fcount">Showing all 12 samples</div>
+      <div class="fcount" id="fcount">Showing all 13 samples</div>
     </div>
     <div class="grid" id="grid">
       <div class="group" data-g="dcs"><h3>Indiana Department of Child Services</h3><span>Senior Operations &amp; Research Analyst, Research &amp; Evaluation &middot; 2022&ndash;2026</span></div>
@@ -400,12 +400,18 @@ footer .wrap{border-top:1px solid #3A4A6B;padding-top:22px;display:flex;justify-
         <div class="tags"><div class="tl">Research area</div><div class="chips"><span class="chip rose">Immigrant services</span><span class="chip rose">Community health</span></div><div class="tl">Skills used</div><div class="chips"><span class="chip">Process evaluation</span><span class="chip">Logic model</span><span class="chip">Focus groups</span><span class="chip">Instrument design</span></div></div>
         <div class="foot"><span class="doc">Evaluation report &middot; 9 pp</span><a class="read" href="12_Natural_Helper_Program_Assessment.pdf" target="_blank" rel="noopener">Read PDF</a></div>
       </article>
-      <div class="group" data-g="school"><h3>Graduate coursework</h3><span>MPA, O&rsquo;Neill School of Public and Environmental Affairs &middot; 2021</span></div>
+      <div class="group" data-g="school"><h3>Graduate coursework</h3><span>MPA, O&rsquo;Neill School of Public and Environmental Affairs &middot; 2020&ndash;2021</span></div>
       <article class="sample reveal" data-t="data education eval school">
         <div class="where">MPA coursework &middot; IU O&rsquo;Neill &middot; Nov 2021</div><h3>Course Impact Evaluation</h3>
         <p>A pretest-posttest impact evaluation using paired t-tests and effect sizes, with a candid look at threats to internal validity.</p>
         <div class="tags"><div class="tl">Research area</div><div class="chips"><span class="chip rose">Education &amp; training</span></div><div class="tl">Skills used</div><div class="chips"><span class="chip">Impact evaluation</span><span class="chip">Paired t-tests</span><span class="chip">Effect sizes</span><span class="chip">Validity assessment</span></div></div>
         <div class="foot"><span class="doc">Evaluation report &middot; 3 pp</span><a class="read" href="11_Course_Impact_Evaluation_Report.pdf" target="_blank" rel="noopener">Read PDF</a></div>
+      </article>
+      <article class="sample reveal" data-t="data gis policy school transport">
+        <div class="where">MPA coursework &middot; IU O&rsquo;Neill &middot; Nov 2020</div><h3>Mapping Accident Risk for Cyclists and Pedestrians</h3>
+        <p>An ArcGIS Pro analysis of speed-limit risk on shared bikeways and bikeway&ndash;pedestrian conflict points in Marion County, using kernel density to propose new bike share stations.</p>
+        <div class="tags"><div class="tl">Research area</div><div class="chips"><span class="chip rose">Transportation safety</span><span class="chip rose">Urban planning</span></div><div class="tl">Skills used</div><div class="chips"><span class="chip">ArcGIS Pro</span><span class="chip">Spatial &amp; proximity analysis</span><span class="chip">Kernel density estimation</span><span class="chip">Multi-criteria decision analysis</span></div></div>
+        <div class="foot"><span class="doc">Spatial analysis report &middot; 8 pp</span><a class="read" href="13_Cyclist_Pedestrian_Risk_GIS_Analysis.pdf" target="_blank" rel="noopener">Read PDF</a></div>
       </article>
       <article class="sample reveal" data-t="finance policy school">
         <div class="where">MPA coursework &middot; IU O&rsquo;Neill &middot; Dec 2021</div><h3>Intergovernmental Hazard Mitigation</h3>
@@ -455,7 +461,7 @@ footer .wrap{border-top:1px solid #3A4A6B;padding-top:22px;display:flex;justify-
     var n=0;
     cards.forEach(function(c){var t=c.getAttribute('data-t').split(' ');var show=(sel.exp==='all'||t.indexOf(sel.exp)>-1)&&(sel.topic==='all'||t.indexOf(sel.topic)>-1);c.classList.toggle('hide',!show);if(show){c.classList.add('in');n++}});
     groups.forEach(function(g){var k=g.getAttribute('data-g'),any=false;cards.forEach(function(c){if(!c.classList.contains('hide')&&c.getAttribute('data-t').split(' ').indexOf(k)>-1)any=true});g.classList.toggle('hide',!any)});
-    cnt.textContent=n===12?'Showing all 12 samples':(n===0?'No samples match both filters. Try another combination.':'Showing '+n+' of 12 samples');
+    cnt.textContent=n===13?'Showing all 13 samples':(n===0?'No samples match both filters. Try another combination.':'Showing '+n+' of 13 samples');
   }
   document.querySelectorAll('.filters').forEach(function(row){var dim=row.getAttribute('data-dim');row.querySelectorAll('button').forEach(function(b){b.addEventListener('click',function(){
     row.querySelectorAll('button').forEach(function(x){x.classList.remove('on')});b.classList.add('on');sel[dim]=b.getAttribute('data-f');apply();
