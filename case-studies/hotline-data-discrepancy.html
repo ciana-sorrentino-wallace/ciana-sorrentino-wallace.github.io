@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Finding a Hidden Duplication Defect in Hotline Data | Case study | Ciana Sorrentino Wallace, MPA</title>
+<meta name="description" content="Case study: how a routine analysis uncovered a duplication defect that inflated a year of child abuse hotline reporting by 39.5 percent.">
+<link rel="canonical" href="https://ciana-sorrentino-wallace.github.io/case-studies/hotline-data-discrepancy.html">
+<meta name="author" content="Ciana Sorrentino Wallace">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Finding a Hidden Duplication Defect in Hotline Data | Case study">
+<meta property="og:description" content="Case study: how a routine analysis uncovered a duplication defect that inflated a year of child abuse hotline reporting by 39.5 percent.">
+<meta property="og:url" content="https://ciana-sorrentino-wallace.github.io/case-studies/hotline-data-discrepancy.html">
+<meta property="og:image" content="https://ciana-sorrentino-wallace.github.io/og-image.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<meta name="theme-color" content="#23314C">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="case.css">
+<script data-goatcounter="https://cianasw.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="nav"><div class="wrap">
+  <a class="mark" href="../">Ciana <span>Sorrentino Wallace</span></a>
+  <nav class="links" aria-label="Site">
+    <a class="hide-sm" href="../#case-studies">Case studies</a>
+    <a class="hide-sm" href="../#work">Work samples</a>
+    <a class="hide-sm" href="../#contact">Contact</a>
+    <a class="pill" href="../Ciana_Sorrentino_Wallace_Resume.pdf" target="_blank" rel="noopener" data-goatcounter-click="resume-case">R&eacute;sum&eacute;</a>
+  </nav>
+</div></header>
+<main id="main">
+<section class="hero"><div class="wrap">
+  <a class="back" href="../#case-studies">&larr; All case studies</a>
+  <div class="eyebrow">Case study &middot; Indiana Department of Child Services &middot; 2025</div>
+  <h1>A routine analysis uncovered 140,000 duplicate hotline reports</h1>
+  <p class="lede">While pulling numbers for the hotline team, I noticed the official report and the case management system disagreed by more than 140,000 reports. I traced the gap to a single column in a source table and quantified exactly how much it had inflated a year of reporting.</p>
+  <div class="meta"><div><span>My role</span><b>Analyst who found and documented the defect</b></div><div><span>Organization</span><b>Indiana Department of Child Services, Research &amp; Evaluation</b></div><div><span>Delivered</span><b>February 2025</b></div><div><span>Tools</span><b>SQL, Excel</b></div></div>
+</div></section>
+<section class="glance" aria-label="At a glance"><div class="wrap"><div class="stats"><div><b>355,609</b><span>hotline reports in the official daily summary for one year</span></div><div><b>214,554</b><span>distinct reports actually in the case management system</span></div><div><b>39.5%</b><span>of source-table records were duplicates</span></div><div><b>1 column</b><span>a download date, was the only difference between duplicate rows</span></div></div></div></section>
+<section class="sec"><div class="wrap narrow">
+  <div class="lab"><i>01</i><h2>The challenge</h2></div>
+  
+  <p class="big">Hotline volume drives staffing, budgets and what the agency tells legislators and the public. If the count is wrong, every decision built on it is too.</p>
+  <p>The agency&rsquo;s reporting system produces a daily hotline decision summary that rolls up into monthly and annual figures. While preparing an analysis for the hotline team, I found its yearly total did not match the number of reports I could pull directly from the case management system, and the difference was far too large to be rounding or timing.</p>
+</div></section>
+<section class="sec"><div class="wrap narrow">
+  <div class="lab"><i>02</i><h2>My approach</h2></div>
+  <ol class="steps"><li><b>Reconciled the totals four ways</b><span>Pulled counts from the case management system and from the source table behind the official report, each on a distinct and a non-distinct basis, by created date and by report date.</span></li><li><b>Found the matching number</b><span>The non-distinct source-table total (354,675) was the only figure close to the official report (355,609), which pointed to the source table as the cause.</span></li><li><b>Isolated the defect</b><span>Sampled records and found each report identifier appearing twice, with the download date the only field that differed. The table was capturing the same report on consecutive download days.</span></li><li><b>Measured the damage</b><span>Counted every affected report and traced how far back the pattern went: it had been present since the April 2022 to April 2023 reporting year.</span></li><li><b>Wrote it up for action</b><span>A four-page report with the reconciliation tables, the evidence sample and the correction needed to restore accurate counts.</span></li></ol>
+</div></section>
+<section class="sec"><div class="wrap">
+  <div class="lab"><i>03</i><h2>What I found</h2></div>
+  <figure class="chart">
+  <div class="ct">The official report overstated every category</div>
+  <div class="cs">Hotline reports, April 30, 2023 to April 30, 2024: reporting system total versus distinct reports in the case management system</div>
+  <div class="legend"><span><i style="background:#23314C"></i>Reporting system total</span><span><i style="background:#5E8F8B"></i>Distinct reports in the case management system</span></div>
+  <div class="sv" tabindex="0" role="region" aria-label="Chart, scrolls sideways on small screens"><svg viewBox="0 0 720 224" role="img" aria-labelledby="c2t c2d"><title id="c2t">Reported versus actual hotline reports by decision</title><desc id="c2d">For every hotline decision type, the reporting system total was far higher than the count of distinct reports in the case management system.</desc><text x="176" y="39.0" text-anchor="end" font-size="13" fill="#3C404A">Screened in for assessment</text><rect x="190" y="14" width="460.0" height="18" rx="4" fill="#23314C"><title>Reported: 221,452</title></rect><text x="658.0" y="27" font-size="12.5" fill="#23314C" font-weight="600">221,452</text><rect x="190" y="38" width="264.2" height="18" rx="4" fill="#5E8F8B"><title>Actual distinct reports: 127,214</title></rect><text x="462.2" y="51" font-size="12.5" fill="#3E6B67" font-weight="600">127,214</text><text x="176" y="107.0" text-anchor="end" font-size="13" fill="#3C404A">Screened out</text><rect x="190" y="82" width="223.5" height="18" rx="4" fill="#23314C"><title>Reported: 107,586</title></rect><text x="421.5" y="95" font-size="12.5" fill="#23314C" font-weight="600">107,586</text><rect x="190" y="106" width="148.3" height="18" rx="4" fill="#5E8F8B"><title>Actual distinct reports: 71,401</title></rect><text x="346.3" y="119" font-size="12.5" fill="#3E6B67" font-weight="600">71,401</text><text x="176" y="175.0" text-anchor="end" font-size="13" fill="#3C404A">Information &amp; referral</text><rect x="190" y="150" width="55.1" height="18" rx="4" fill="#23314C"><title>Reported: 26,536</title></rect><text x="253.1" y="163" font-size="12.5" fill="#23314C" font-weight="600">26,536</text><rect x="190" y="174" width="33.1" height="18" rx="4" fill="#5E8F8B"><title>Actual distinct reports: 15,918</title></rect><text x="231.1" y="187" font-size="12.5" fill="#3E6B67" font-weight="600">15,918</text></svg></div>
+  <figcaption>Aggregate counts only; no case-level data. Service requests (35 reported, 21 distinct) are too small to display.</figcaption>
+  <details><summary>View the data as a table</summary><table><thead><tr><th scope="col">Decision</th><th scope="col">Reporting system total</th><th scope="col">Distinct reports (case management system)</th></tr></thead><tbody><tr><td>Screened in for assessment</td><td>221,452</td><td>127,214</td></tr><tr><td>Screened out</td><td>107,586</td><td>71,401</td></tr><tr><td>Information &amp; referral</td><td>26,536</td><td>15,918</td></tr><tr><td>All decisions</td><td>355,609</td><td>214,554</td></tr></tbody></table></details>
+</figure>
+  <div class="dups" role="table" aria-label="Sample of duplicated source-table rows (surrogate identifiers)">
+    <div role="row"><span role="columnheader">Report identifier</span><span role="columnheader">Download date</span></div>
+    <div class="pair" role="row"><span role="cell">RPT-000001</span><span role="cell">2024-12-<em>30</em></span></div>
+    <div class="pair" role="row"><span role="cell">RPT-000001</span><span role="cell">2024-12-<em>31</em></span></div>
+    <div role="row"><span role="cell">RPT-000002</span><span role="cell">2024-12-<em>31</em></span></div>
+    <div role="row"><span role="cell">RPT-000002</span><span role="cell">2024-12-<em>30</em></span></div>
+  </div>
+  <p style="font-size:.84rem;color:#6B645C;margin-top:8px">Identifiers are surrogate values. The pattern is real: same report, same data, different download date.</p><div class="finding"><div class="n">65%<small>Of distinct reports</small></div><div><h3>Nearly two in three reports were counted twice</h3><p>140,114 of roughly 214,500 distinct reports appeared twice in the source table, producing 280,228 records where there should have been 140,114.</p></div></div><div class="finding"><div class="n">39.5%<small>Of all records</small></div><div><h3>Over a third of the reported volume was not real</h3><p>Of the 354,675 source-table records, 39.5% were duplicates. Only 60.5% represented actual, distinct reports.</p></div></div><div class="finding"><div class="n">2 years<small>Affected</small></div><div><h3>The problem predated the analysis</h3><p>The duplication was present in the prior reporting year too, so earlier published figures were likely affected as well.</p></div></div>
+</div></section>
+<div class="wrap narrow"><blockquote class="pull"><p>The numbers matched closely enough to look trustworthy and differed enough to matter. The only way to see it was to reconcile the same count from every direction.</p><cite>Key takeaway</cite></blockquote></div><section class="sec"><div class="wrap narrow">
+  <div class="lab"><i>04</i><h2>Why it mattered</h2></div>
+  
+  <p>Overstated hotline volume can justify the wrong staffing levels, distort trend lines shown to leadership and the legislature, and undermine trust in every other figure from the same system. Finding the defect at the column level made the correction precise: count each report once, regardless of how many times it was downloaded.</p>
+  <p>This is the same instinct I brought to validating federal AFCARS reports as the agency&rsquo;s designated data champion during its case management system consolidation: check the number from more than one direction before anyone builds on it.</p>
+</div></section>
+<section class="sec"><div class="wrap narrow">
+  <div class="lab"><i>05</i><h2>Skills this shows</h2></div>
+  <div class="chips"><span class="chip rose">Child welfare</span><span class="chip rose">Data integrity</span><span class="chip">SQL</span><span class="chip">Data reconciliation</span><span class="chip">Root-cause analysis</span><span class="chip">Data validation</span><span class="chip">Technical writing for non-technical readers</span></div>
+</div></section>
+<div class="wrap"><div class="report">
+  <p><b>Read the full report</b>The redacted four-page report includes the monthly summary, the full four-way reconciliation and the evidence sample.</p>
+  <a class="btn primary" href="../07_Hotline_Data_Discrepancy_Report.pdf" target="_blank" rel="noopener" data-goatcounter-click="case-pdf-07">Open the PDF (4 pages)</a>
+</div></div>
+
+  <div class="wrap"><div class="next"><a href="supervised-visitation-cost-analysis.html"><small>Next case study &middot; Cost and policy analysis</small><b>Utilization and Cost of Supervised Visitation</b></a><a href="natural-helpers-evaluation.html"><small>Next case study &middot; Program evaluation</small><b>Evaluating a Peer-Helper Program for Immigrant Families</b></a></div></div>
+</main>
+<footer><div class="wrap"><span>&copy; 2026 Ciana Sorrentino Wallace, MPA</span><span><a href="../">Portfolio</a> &nbsp;&middot;&nbsp; <a href="https://www.linkedin.com/in/cianasorrentino/" target="_blank" rel="noopener">LinkedIn</a> &nbsp;&middot;&nbsp; <a href="../Ciana_Sorrentino_Wallace_Resume.pdf" target="_blank" rel="noopener">R&eacute;sum&eacute;</a></span></div></footer>
+</body>
+</html>
