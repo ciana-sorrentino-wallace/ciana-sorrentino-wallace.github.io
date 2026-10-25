@@ -138,3 +138,11 @@ footer a:hover{color:#fff}
 @media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
 figure.chart .sv{overflow-x:auto;-webkit-overflow-scrolling:touch}
 @media(max-width:640px){figure.chart{padding:20px 16px 14px}figure.chart .sv svg{min-width:520px}figure.chart .sv:after{content:"Swipe to see the full chart \2192";display:block;font-size:.74rem;color:var(--grey);margin-top:6px}}
+/* chart tooltips + focus */
+.tip{position:absolute;z-index:60;transform:translate(-50%,-100%);background:var(--navy);color:#fff;font-size:.8rem;font-weight:500;padding:7px 11px;border-radius:9px;white-space:nowrap;pointer-events:none;opacity:0;transition:opacity .15s;box-shadow:0 10px 24px -12px rgba(35,49,76,.6)}
+.tip:after{content:"";position:absolute;left:50%;bottom:-5px;transform:translateX(-50%);border:5px solid transparent;border-bottom:0;border-top-color:var(--navy)}
+.tip.on{opacity:1}
+figure.chart .pt,figure.chart .bar{cursor:pointer;outline:none}
+figure.chart .pt:hover,figure.chart .pt:focus{stroke-width:4}
+figure.chart .bar:hover,figure.chart .bar:focus{filter:brightness(1.15)}
+figure.chart .pt:focus-visible,figure.chart .bar:focus-visible{stroke:var(--rose);stroke-width:3}
